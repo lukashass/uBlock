@@ -281,6 +281,8 @@
                 return;
             }
             const hn = vAPI.hostnameFromNetworkURL(details.url);
+            const documentHn = vAPI.hostnameFromNetworkURL(details.documentUrl);
+            if ( hn === documentHn ) { return; }
             const cname = this.cnames.get(hn);
             if ( cname === '' ) { return; }
             if ( cname !== undefined ) {
